@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<meta name = "mobile-web-app-capable" content="yes"/>
+	<meta name = "apple-mobile-web-app-capable" content="yes"/>
+
+	<title>Title</title>
+
+	<link rel="icon" sizes = "192x192" href = "icon.png"/>
+	<link rel = "apple-touch-icon" href = "icon.png"/>
+	<link rel = "shortcut icon" href="weeicon.png" type ="image/x-icon" />
+
+	<link rel = "stylesheet" type = "text/css" href="normalize.css"/>
+	<link rel = "stylesheet" type = "text/css" href="Cycle.css"/>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+		  integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+		  crossorigin=""/>
+
+</head>
+<body>
+<header>
+	<div class = "headWords">
+		<button id="nameButton" type="button">Enter Name</button>
+		<label for="difDrop">Difficulty:</label>
+		<select id="difDrop">
+			<option value="lvl1">Novice</option>
+			<option value="lvl2">Moderate</option>
+			<option value="lvl3">Amateur</option>
+			<option value="lvl4">Pro</option>
+		</select>
+	</div>
+	<div class="topBox">
+		<img src="weather.png" class="topImg" id="weatherImg" alt="weather"/>
+		<button id="homeButton" class="topImg" type="button"/>
+	</div>
+</header>
+<main>
+	<div id="mapid">
+		<div class="leaflet-bottom leaflet-left">
+			<button id="getGPS" type="button">Centre on me</button>
+		</div>
+	</div>
+	<div id="lower">
+		<button id="routeButton" type="button" value="yes"></button>
+
+
+		<div id="showRoutes" class="but">
+		</div>
+
+
+
+		<div id="routeInfo" class="but">
+			<div id="scrollBox">
+				<p>
+					<label for="rname">Route name: </label>
+					<input type="text" id="rname" name="rname"><br>
+					Difficulty rating: <span id = "i1"></span><br>
+					Distance: <span id = "i2"></span><br>
+					Estimated time: <span id = "i3"></span><br>
+					Change in height: <br>
+				<div class="indent"> Ascent: <span id = "i4"></span><br>
+					Descent: <span id = "i5"></span><br></div>
+				</p>
+				<button id="direction" type="button">Show Directions</button>
+			</div>
+			<div id="bBut">
+				<button id="discard" type="button">Discard</button>
+				<button id="save" type="button">Save</button>
+			</div>
+		</div>
+
+	</div>
+
+
+	<div id="routePage" class="but">
+		<div id = "scrollPane">
+		<p>
+			Route name: <span id = "rrname"></span> <button id="updateNameButton" type="button">Update</button><br>
+			Dificulty rating: <span id = "ri1"></span><br>
+			Distance: <span id = "ri2"></span><br>
+			Estimated time: <span id = "ri3"></span><br>
+			Change in height:
+		<div class="indent">Ascent: <span id = "ri4"></span><br>
+			Descent: <span id = "ri5"></span><br></div>
+		<img src="weather.png" id="wthRoute" alt="weather"/><br><div class="indent"><span id = "ri6"></span> </div>
+		</p> </div>
+		<button id="rdirection" type="button">Show Directions</button>
+		<button id="rdelete" type="button">Delete</button>
+	</div>
+
+	<footer>Made By CS317 Group O</footer>
+</main>
+
+
+
+</body>
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+		integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+		crossorigin=""></script>
+<script src = "CycleModel.js"></script>
+<script src = "CycleView.js"></script>
+<script src = "CycleController.js"></script>
+</html>
